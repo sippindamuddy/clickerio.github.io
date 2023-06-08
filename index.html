@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Clicker Game</title>
+  <link rel="icon" href="C:\Users\alexj\Documents\click\image.png" type="image.png">
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .store {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .storeItem {
+      text-align: center;
+    }
+
+    .storeItem p {
+      margin-bottom: 5px;
+    }
+
+    .storeItem button {
+      margin-bottom: 10px;
+    }
+
+    .button {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .buttonCursor {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      animation: cursorFly 1s linear;
+      animation-fill-mode: forwards;
+      animation-iteration-count: 1;
+    }
+
+    @keyframes cursorFly {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--translate-x), var(--translate-y)) scale(0.5);
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Clicker Game</h1>
+    <p>Click the button to earn clicks!</p>
+
+    <div class="buttonWrapper">
+      <button id="clickButton" class="button">
+        Click Me
+        <div class="buttonCursor"></div>
+      </button>
+    </div>
+
+    <h2 id="score">Score: 0</h2>
+
+    <div class="store">
+      <div class="storeItem">
+        <p>Multiplier x2</p>
+        <button class="buyButton" data-price="50">Buy (50)</button>
+      </div>
+      <div class="storeItem">
+        <p>Multiplier x5</p>
+        <button class="buyButton" data-price="100">Buy (100)</button>
+      </div>
+      <div class="storeItem">
+        <p>Multiplier x10</p>
+        <button class="buyButton" data-price="200">Buy (200)</button>
+      </div>
+      <div class="storeItem">
+        <p>Multiplier x100</p>
+        <button class="buyButton" data-price="500">Buy (500)</button>
+      </div>
+      <div class="storeItem">
+        <p>Multiplier x1000</p>
+        <button class="buyButton" data-price="1000">Buy (1000)</button>
+      </div>
+      <div class="storeItem">
+        <p>Multiplier x10000</p>
+        <button class="buyButton" data-price="10000">Buy (10000)</button>
+      </div>
+    </div>
+    <button id="themeToggle">Toggle Theme</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

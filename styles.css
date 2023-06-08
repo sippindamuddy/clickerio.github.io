@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #282828; /* Set the background color to a darker gray */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #383838; /* Set the background color of the main container to a darker gray */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #eee; /* Set the text color to a lighter gray */
+  }
+  
+  .dark-theme .container {
+    background-color: #000; /* Set the background color of the main container to black in dark theme */
+    color: #eee;
+  }
+  
+  h1,
+  h2,
+  p {
+    color: inherit;
+  }
+  
+  .buttonWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  #clickButton {
+    padding: 15px 40px;
+    font-size: 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation-duration: 0.3s;
+  }
+  
+  #clickButton:hover {
+    background-color: #45a049;
+  }
+  
+  #clickButton.buttonBounce {
+    animation-name: bounce;
+  }
+  
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  #score {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .store {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .storeItem {
+    flex-basis: 48%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #555; /* Set the background color of the store items to a darker gray */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .storeItem:hover {
+    background-color: #666; /* Set the background color of the store items when hovered to a slightly lighter gray */
+  }
+  
+  .storeItem p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .storeItem .buyButton {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .storeItem .buyButton:hover {
+    background-color: #45a049;
+  }
+  
+  #themeToggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #themeToggle:hover {
+    background-color: #222;
+  }
+  .rainbow-effect {
+    animation: rainbow-animation 2s linear infinite;
+  }
+  
+  @keyframes rainbow-animation {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    43% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: red; }
+  }
+  
+  .cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: cursorFly linear;
+  }
+  
+  @keyframes cursorFly {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(var(--cursor-translate-x), var(--cursor-translate-y));
+      opacity: 0;
+    }
+  }
+  
